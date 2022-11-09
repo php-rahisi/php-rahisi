@@ -445,7 +445,7 @@ final class Dotenv
             if (!class_exists(Process::class)) {
                 throw new \LogicException('Resolving commands requires the Symfony Process component.');
             }
-            
+
             $process = method_exists(Process::class, 'fromShellCommandline') ? Process::fromShellCommandline('echo '.$matches[0]) : new Process('echo '.$matches[0]);
 
             if (!method_exists(Process::class, 'fromShellCommandline') && method_exists(Process::class, 'inheritEnvironmentVariables')) {

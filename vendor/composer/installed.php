@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'rahisi/phprahisi',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c9dcb4e578fbe50155ab68c560a02a9c75af4caf',
-        'type' => 'library',
+        'reference' => '9acba87e8aa94dfc79cd470a390e564a1e746717',
+        'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'c9dcb4e578fbe50155ab68c560a02a9c75af4caf',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'phpmailer/phpmailer' => array(
             'pretty_version' => 'v6.6.5',
             'version' => '6.6.5.0',
@@ -28,12 +19,12 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'setasign/fpdf' => array(
-            'pretty_version' => '1.8.4',
-            'version' => '1.8.4.0',
-            'reference' => 'b0ddd9c5b98ced8230ef38534f6f3c17308a7974',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../setasign/fpdf',
+        'rahisi/phprahisi' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '9acba87e8aa94dfc79cd470a390e564a1e746717',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

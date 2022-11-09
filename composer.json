@@ -1,4 +1,12 @@
 {
+    "name": "rahisi/phprahisi",
+    "type": "project",
+    "authors": [
+        {
+            "name": "joshua stephen",
+            "email": "joshtheone07@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "App/",
