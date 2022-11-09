@@ -7,6 +7,6 @@ class testController
 
      public function index()
      {
-          // index 
+          view("welcome");
      }
 }
