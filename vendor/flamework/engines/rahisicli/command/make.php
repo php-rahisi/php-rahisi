@@ -113,7 +113,7 @@ class make extends connect
                 if ($x == 4) {
                     fputs($file1, "class $name{\n");
                 } elseif ($x == 7) {
-                    fputs($file1, '        $users2->create("' . $name . '", function (create $table) {' . "\n");
+                    fputs($file1, '        $schema->create("' . $name . '", function (create $table) {' . "\n");
                 } else {
                     fputs($file1, $a);
                 }
