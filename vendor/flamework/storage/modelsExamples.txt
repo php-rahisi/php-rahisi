@@ -1,0 +1,15 @@
+<?php
+namespace App\Models;
+
+use support\Database\table;
+
+class $model extends table
+{
+    
+    public $table = "$model";
+
+    public function __construct()
+    {
+        new table($this->table);
+    }
+}
