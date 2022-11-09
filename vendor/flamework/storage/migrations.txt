@@ -1,12 +1,1 @@
-users-Table
-stock-Table
-storemaster-Table
-store-Table
-sell-Table
-products-Table
-closedsells-Table
-roles-Table
-transactions-Table
-trade-Table
-product_units-Table
-expences-Table
+test-Table
