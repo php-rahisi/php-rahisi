@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class testController
+class WelcomeController
 {
 
      public function index()

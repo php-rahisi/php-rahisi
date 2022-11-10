@@ -1,12 +1,12 @@
 <?php
 
-use App\Controllers\testController;
+use App\Controllers\WelcomeController;
 use support\Routing\Route;
 
-Route::Get("",function(){
-   view("welcome");
-});
+Route::Get("",[WelcomeController::class,"index"]);
+
+// Route::Get("",function(){
+//    view("welcome");
+// });
 
 // or
-
-Route::Get("welcome",[testController::class,"index"]);

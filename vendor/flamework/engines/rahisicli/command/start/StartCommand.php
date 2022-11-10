@@ -3,10 +3,13 @@
 namespace engines\rahisicli\command\start;
 
 class StartCommand{
-    public function __construct()
+    public function __construct($command)
     {
+     if(isset($command)){
         echo "\n";
-        echo "sever started";
+        exec('php -S localhost:8000');
         echo "\n";
+     }
+        
     }
 }

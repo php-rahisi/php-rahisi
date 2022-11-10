@@ -1,6 +1,5 @@
 <?php
 namespace support\Routing;
-
 use support\Routing\Routes;
 
 class Route
@@ -20,8 +19,7 @@ class Route
                 if (is_array($action)) {
                     $function = $action[1];
                     $class = new $action[0];
-                    $class->$function();
-                    
+                    $class->$function();    
                 }  else {
                     $action();
                 }

@@ -7,6 +7,7 @@ use DB\seeder\seeder;
 use engines\rahisicli\command\DB as CommandDB;
 use engines\rahisicli\command\help;
 use engines\rahisicli\command\make;
+use engines\rahisicli\command\start\StartCommand as serve;
 use stdClass;
 use support\Database\DB;
 use support\Database\schema;
@@ -104,20 +105,19 @@ class App
     public function runCommand(array $command)
     {
         $commandsToEcxecute = [
-            "start",
-            "end",
             "migrate",
             "migrate:fresh",
             "DB",
             "make",
             "schema",
+            "serve",
         ];
 
         if (count($command) > 1) {
             if (in_array($command[1], $commandsToEcxecute)) {
                 switch ($command[1]) {
 
-                    case 'make':
+                    case 'make:':
                         new make($command);
                         break;
 
@@ -127,8 +127,10 @@ class App
 
                     case 'DB';
                         new CommandDB($command);
-                        break;
-                        
+                        break;  
+                    case 'serve';
+                        new serve($command);
+                        break;                        
                     default:
                         new help();
                         break;

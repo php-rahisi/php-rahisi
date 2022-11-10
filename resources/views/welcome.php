@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome in rehisi</title>
+    <title>Welcome to rahisi</title>
     <link rel="stylesheet" href="public/css/bootstrap.css">
 </head>
 <style>
@@ -34,10 +34,10 @@
                 <h4 class="p-3">Karibu</h4>
                 <div class="p-3">
                     <p>
-                        karibu Rahisi Php template. <br>
+                        karibu Rahisi Php Framework. <br>
                     </p>
                     <p>
-                        Humu utakutana na kilakitu unachohitaji katika kutengeneza application yako kwa urahisi kabisa.
+                        Humu utakutana na kila kitu unachohitaji katika kutengeneza application yako kwa urahisi kabisa.
                     </p>
 
                 </div>

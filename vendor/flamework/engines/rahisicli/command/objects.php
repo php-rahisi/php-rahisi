@@ -37,7 +37,6 @@ class objects
             echo "\n";
         } else {
             $file = fopen("./App/Models/$name.php", "w");
-
             $table = '$table';
             $text = "<?php \n   namespace App\Models; \n\n    use support\Database\\table ;\n\nclass $name extends table \n{\n\n   public $table = '$name'; \n\n     public function __construct() \n    {\n\n         new table('$name');\n\n      }\n} ";
             fwrite($file, $text);
@@ -54,7 +53,6 @@ class objects
             echo "\n";
         } else {
             $file = fopen("./App/Controllers/$rename.php", "w");
-
             $table = '$table';
             $text = "<?php \nnamespace App\Controllers;\nclass $rename { \n\n     public function index() \n     {\n          // index \n     } \n} ";
             fwrite($file, $text);
@@ -93,7 +91,6 @@ class objects
                 }
                 $x++;
             }
-
             fclose($file1);
             fclose($file2);
             echo "migration created successful";
