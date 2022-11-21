@@ -2,6 +2,7 @@
 namespace support\Routing;
 
 use support\Routing\Routes;
+use support\token\token;
 
 class Route
 {
@@ -32,6 +33,16 @@ class Route
     static function Post($name, $action)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(isset($_POST['csrf_Token'])){
+                $token = new token();
+                if(!$token->checkToken($_POST['csrf_Token'])){
+                    echo "page expiled error 500";
+                    die;
+                }
+            }else{
+                echo "page expiled error 500";
+                die;
+            }
             $uri = urldecode(       //*****///*** */ */
                 parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)  //**** */
             );

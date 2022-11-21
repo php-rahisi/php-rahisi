@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\trade;
+use support\lib\dictionaly;
+use support\token\token;
 use support\view\View;
 
 function asset($name)
@@ -45,6 +47,14 @@ if (!function_exists("uri")) {
     function uri($uri)
     {
         return explode("/", $uri);
+    }
+}
+
+if (!function_exists("csrf")) {
+    function csrf()
+    {
+        $tocken  = new token();
+        echo $tocken->token();
     }
 }
 
@@ -355,38 +365,6 @@ function dd($key)
     die;
 }
 
-use App\Models\User;
-use support\Database\DB;
-use support\lib\dictionaly;
-
-function unlock($url)
-{
-    if (User::Auth()) {
-        if (isset($_COOKIE['LOCK']) && $_COOKIE['LOCK'] === 'unlocked') {
-            return true;
-        } else {
-            redirect('unlock', ['message' => 'remove lock screen', 'redilect' => $url]);
-        }
-    } else {
-        redirect('login', ['error' => 'login']);
-    }
-}
-
-
-function protect()
-{
-    if (User::Auth()) {
-        if (isset($_COOKIE['LOCK']) && $_COOKIE['LOCK'] === 'unlocked') {
-            return true;
-        } else {
-            view('Auth.unlock2', ['url' => end($_SESSION['lastTwoUrl'])]);
-            exit();
-        }
-    } else {
-        redirect('login', ['error' => 'login']);
-    }
-}
-
 if (!function_exists("dictional")) {
     function dictionaly($englishWord)
     {
@@ -409,68 +387,6 @@ if (!function_exists("dictional")) {
     }
 }
 
-function canMenageUser()
-{
-    $can = DB::table('roles')->where(['seller' => USER['id']])->value('userMenage');
-    if (!empty($can)) {
-        if ($can[0] == 0) {
-            return false;
-        } elseif ($can[0] == 1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
-function canSale()
-{
-    $can = DB::table('roles')->where(['seller' => USER['id']])->value('selling');
-    if (!empty($can)) {
-        if ($can[0] == 0) {
-            return false;
-        } elseif ($can[0] == 1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
-function canMenageStock()
-{
-    $can = DB::table('roles')->where(['seller' => USER['id']])->value('stockMenage');
-    if (!empty($can)) {
-        if ($can[0] == 0) {
-            return false;
-        } elseif ($can[0] == 1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
-function seller()
-{
-    if(USER['lever'] === 'seller'){
-        return true;
-    }
-}
-
-function guest()
-{
-    if(USER['lever'] === 'guest'){
-        return true;
-    }
-}
-
-function storeMaster()
-{
-    if(USER['lever'] === 'storeMaster'){
-        return true;
-    }
-}
 
 function redirectback(array $message = null)
 {
@@ -487,19 +403,6 @@ if (!function_exists("language")) {
     }
 }
 
-function trade($store)
-{
-    $trade = new trade();
-    $thisTrade = $trade->where(['store'=>$store])
-    ->where(['status'=>'opened'])
-    ->get();
-
-    if(count($thisTrade) > 0){
-        return $thisTrade[0]['reference_no'];
-    }else{
-        return false;
-    }
-}
 
 if (!function_exists("encriptId")) {
     function encriptId($data)
