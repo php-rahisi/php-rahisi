@@ -3,6 +3,7 @@
 use App\Models\trade;
 use support\lib\dictionaly;
 use support\token\token;
+use support\view\rahisi;
 use support\view\View;
 
 function asset($name)
@@ -38,8 +39,9 @@ if (!function_exists("view")) {
     function view($name, $data = null)
     {
 
-        $newName = View::viewFinder($name);
-        View::viewComposer($newName, $data);
+        // $newName = View::viewFinder($name);
+        // View::viewComposer($newName, $data);
+        rahisi::view($name, $data = null);
     }
 }
 

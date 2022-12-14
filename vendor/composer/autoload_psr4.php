@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'support\\' => array($vendorDir . '/flamework/src'),
     'engines\\' => array($vendorDir . '/flamework/engines'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Symfony\\Component\\Dotenv\\' => array($vendorDir . '/symfony/dotenv'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'DB\\' => array($baseDir . '/Database'),

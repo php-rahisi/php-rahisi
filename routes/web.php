@@ -4,6 +4,7 @@ use App\Controllers\testController;
 use support\Routing\Route;
 use support\token\token;
 use support\view\rahisi;
+use Symfony\Component\HttpFoundation\Request;
 
 Route::Get("",function(){
    view("welcome");
@@ -14,9 +15,9 @@ Route::Get("",function(){
 Route::Get("welcome",[testController::class,"index"]);
 
 Route::Get("test", function(){
-   rahisi::view("resources/views/test.rahisi.php",["names"=>["juma","rose"]]);
+   
 });
 
 Route::Post("test", function(){
-   csrf();
- });
+   
+});

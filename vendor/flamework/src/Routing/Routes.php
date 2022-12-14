@@ -17,15 +17,7 @@ class Routes{
             $action();
         }
     }
-    public function Auth(){
-        $user = new User();
-        if($user::Auth()){
-            return true;
-        }else{
-            redirect('login');
-        }
-    }
-
+    
     public function uri($uri)
     {
         return explode("/", $uri);

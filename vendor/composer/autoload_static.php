@@ -6,6 +6,11 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit5ebffbeebdbc7725a6539994f4fe92d9
 {
+    public static $files = array (
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         's' => 
         array (
@@ -17,6 +22,8 @@ class ComposerStaticInit5ebffbeebdbc7725a6539994f4fe92d9
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Dotenv\\' => 25,
         ),
         'P' => 
@@ -41,6 +48,14 @@ class ComposerStaticInit5ebffbeebdbc7725a6539994f4fe92d9
         'engines\\' => 
         array (
             0 => __DIR__ . '/..' . '/flamework/engines',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\HttpFoundation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-foundation',
         ),
         'Symfony\\Component\\Dotenv\\' => 
         array (

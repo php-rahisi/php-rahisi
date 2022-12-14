@@ -17,6 +17,8 @@ class View
         $view = new viewComposer($viewLocation,$dataBundleToViewer);
         $view->view();
     }
+
+    
 }
 
 class ViewComposer

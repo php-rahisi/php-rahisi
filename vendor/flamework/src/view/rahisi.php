@@ -1,16 +1,30 @@
 <?php
 namespace support\view;
-class rahisi {
+class rahisi 
+{
 
 	static $blocks = array();
 	static $cache_path = 'cache/';
 	static $cache_enabled = FALSE;
 
 	static function view($file, $data = array()) {
-		$cached_file = self::cache($file);
-	    extract($data, EXTR_SKIP);
+		$view = self::viewFinder($file);
+		$cached_file = self::cache($view);
+		if(is_array($data)){  
+			extract($data, EXTR_SKIP);
+        }
 	   	require $cached_file;
 	}
+
+	static function viewFinder($name){
+        $names = explode(".", $name);
+        $indexes = count($names); 
+        $location = "resources/views/";
+        for ($i = 0; $i < $indexes - 1; $i++) {
+            $location .= $names[$i] . "/";
+        }
+        return  $location . end($names) . ".php";
+    }
 
 	static function cache($file) {
 		if (!file_exists(self::$cache_path)) {

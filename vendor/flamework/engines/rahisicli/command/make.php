@@ -14,6 +14,43 @@ class make extends connect
             $fn = $commad[2];
             if (!empty($commad[3])) {
                 $this->$fn($commad[3]);
+                if(!empty($commad[4])){
+                    if($commad[2] === "model"){
+                        switch ($commad[4]) {
+
+                            case '-c':
+                                $this->controller($commad[3]);
+                                break;
+
+                            case '-m':
+                                $this->migration($commad[3]);
+                                break;
+
+                            default:
+                                echo "\n\033[31mModel command ".$commad[4]." is not found \033[0m\n\n";
+                                break;
+                        }
+                    }
+                }
+
+                if(!empty($commad[5])){
+                    if($commad[2] === "model"){
+                        switch ($commad[5]) {
+
+                            case '-c':
+                                $this->controller($commad[3]);
+                                break;
+
+                            case '-m':
+                                $this->migration($commad[3]);
+                                break;
+
+                            default:
+                                echo "\n\033[31mModel command ".$commad[5]." is not found \033[0m\n\n";
+                                break;
+                        }
+                    }
+                }
             } else {
 
                 echo "\n\033[31mModel name is required \033[0m\n\n";
